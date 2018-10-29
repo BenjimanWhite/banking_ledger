@@ -20,6 +20,7 @@ class Ledger
 	    create_account_workflow
 	  else
 	    print_goodbye_message
+      exit
 	  end
 
 	else
@@ -107,9 +108,9 @@ class Ledger
       else
   	    print_generic_error
       end
-      
+
+      prompt_for_further_action
     end
-    prompt_for_further_action
   end
 
   private
