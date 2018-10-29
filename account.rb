@@ -1,7 +1,7 @@
 require './transaction.rb'
 
 class Account
-  
+
   attr_reader :username, :password, :transaction_list
   attr_accessor :balance
 
@@ -15,7 +15,7 @@ class Account
   def make_deposit(amount)
   	rounded_amount = round_pennies(amount)
 
-  	record_transaction(rounded_amount, @balance, :deposit)
+    record_transaction(rounded_amount, @balance, :deposit)
     @balance += rounded_amount
   end
 

@@ -10,23 +10,23 @@ class Ledger
     print_welcome_prompt
     response = gets.chomp
 
-	if is_yes?(response)
-	  login
-	elsif is_no?(response)
-	  print_create_account_prompt
-	  response = gets.chomp
-
 	  if is_yes?(response)
-	    create_account_workflow
-	  else
-	    print_goodbye_message
-      exit
-	  end
+	    login
+	  elsif is_no?(response)
+	    print_create_account_prompt
+	    response = gets.chomp
 
-	else
-	  print_generic_error
-	  login_workflow
-	end
+	    if is_yes?(response)
+	      create_account_workflow
+	    else
+	      print_goodbye_message
+        exit
+	    end
+
+	  else
+	    print_generic_error
+	    login_workflow
+	  end
   end
 
   def login
